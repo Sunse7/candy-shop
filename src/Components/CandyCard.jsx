@@ -2,6 +2,7 @@ import { useDispatch } from "react-redux";
 import Button from "./Button";
 import { buyCandy } from "../actions/candyActions";
 import { Link } from "react-router-dom";
+import styles from './CandyCard.module.scss';
 
 function CandyCard({ candy }) {
   const dispatch = useDispatch();
@@ -15,21 +16,21 @@ function CandyCard({ candy }) {
   }
 
   return (
-    <article className="card">
+    <article className={styles.card}>
       <Link to={'/candyinfo/' + candy.id}>
         <img
-          className="card__image"
+          className={styles.image}
           src={`/images/candy-${candy.id}.png`}
           alt="Candy"
           width="200px"
           height="200px"
         />
       </Link>
-      <section className="card__info--firstrow">
+      <section className={styles.firstrow}>
         <h3>{candy.name}</h3>
         <p>{candy.price}:-</p>
       </section>
-      <section className="card__info--secondrow">
+      <section className={styles.secondrow}>
         <Button title="+" action={addCandyToCart} />
       </section>
     </article>

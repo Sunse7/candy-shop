@@ -1,0 +1,15 @@
+@import '../variables';
+
+.card {
+    @include box-shadowing;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    .firstrow {
+        display: flex;
+        justify-content: space-between;
+    }
+    .secondrow {
+        display: flex;
+        justify-content: flex-end;
+    }
+}

@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import "./App.css";
+import "./App.scss";
 import StartPage from "./pages/StartPage";
 import CandyInfo from "./pages/CandyInfo";
 import Cart from "./pages/Cart";

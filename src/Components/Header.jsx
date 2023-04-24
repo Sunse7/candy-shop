@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
+import styles from './Header.module.scss';
 
 function Header() {
     return ( 
-        <header>
+        <header className={styles.header}>
             <h1>HEADER</h1>
-            <Link to='/cart'>
+            <Link to='/cart' className={styles.link}>
                 <img src="/images/shopping-cart.svg" width='25px' height='25px' alt="Shopping cart" />
             </Link>
         </header>

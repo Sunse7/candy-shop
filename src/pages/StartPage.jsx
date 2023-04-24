@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import CandyCard from "../Components/CandyCard";
 import { useEffect, useState } from "react";
+import styles from "./StartPage.module.scss";
 
 function StartPage() {
   const [candies, setCandies] = useState([]);
@@ -24,17 +25,18 @@ function StartPage() {
   }
 
   return (
-    <main>
-      <p>STARTPAGE</p>
-      <section>
-        <label htmlFor="">Search</label>
+    <main className={styles.main}>
+      <section className={styles.searchContainer}>
         <input
           type="text"
           onChange={(e) => handleSearchInput(e.target.value)}
+          placeholder="Search Candy"
         />
       </section>
-      {candies &&
-        candies.map((candy) => <CandyCard key={candy.id} candy={candy} />)}
+      <section className={styles.candyCards}>
+        {candies &&
+          candies.map((candy) => <CandyCard key={candy.id} candy={candy} />)}
+      </section>
     </main>
   );
 }
